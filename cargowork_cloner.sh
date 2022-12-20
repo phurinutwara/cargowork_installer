@@ -19,24 +19,24 @@ fi
 
 ENV_DECRYPT () {
     mkdir "../env" > /dev/null 2>&1
-    openssl enc -aes-256-cbc -d -in ../enc/wms-service.enc -out ../env/wms-service.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
-    openssl enc -aes-256-cbc -d -in ../enc/wms-aotga.enc -out ../env/wms-aotga.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
-    openssl enc -aes-256-cbc -d -in ../enc/know_graph_service.enc -out ../env/know_graph_service.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
+    openssl enc -aes-256-cbc -d -in enc/wms-service.enc -out env/wms-service.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
+    openssl enc -aes-256-cbc -d -in enc/wms-aotga.enc -out env/wms-aotga.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
+    openssl enc -aes-256-cbc -d -in enc/know_graph_service.enc -out env/know_graph_service.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
 }
 
 # Write Backend ENV
 BACK_ENV () {
-    cp ../../env/wms-service.env ./.env
+    cp ../env/wms-service.env ./.env
 }
 
 # Write Graph ENV
 GRAPH_ENV () {
-    cp ../../env/know_graph_service.env ./.env
+    cp ../env/know_graph_service.env ./.env
 }
 
 # Write Frontend ENV
 FRONT_ENV () {
-    cp ../../env/wms-aotga.env ./.env
+    cp ../env/wms-aotga.env ./.env
 }
 
 ECHO_AUTORUN() {
@@ -95,8 +95,8 @@ MAIN () {
         npm install --global yarn
     fi
 
-    mkdir "cargowork" > /dev/null 2>&1
-    cd "cargowork/"
+    # mkdir "cargowork" > /dev/null 2>&1
+    # cd "cargowork/"
 
     # Clone Backend Service
     echo "";
