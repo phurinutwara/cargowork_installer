@@ -6,6 +6,8 @@ This script is used for clone 3 cargowork services including
 
 and also gives `autorun.sh` which use `pm2` to easily manage all those services
 
+---
+
 ## Table of Contents
 
 - [#📚 Prerequisite tools](#-prerequisite-tools)
@@ -20,6 +22,8 @@ and also gives `autorun.sh` which use `pm2` to easily manage all those services
 - Yarn
 - PM2
 - openssl (v3+)
+
+---
 
 ## 💾 Installation
 
@@ -53,6 +57,8 @@ Then use `autorun.sh` to automatically run 3 core-services with ease by using `s
 chmod +x ./autorun.sh && \
 sh ./autorun.sh
 ```
+
+---
 
 ## 🎮 Usage
 
