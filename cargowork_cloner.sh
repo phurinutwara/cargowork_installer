@@ -49,7 +49,7 @@ ECHO_AUTORUN() {
     echo 'if [ "$PM2_IS_AVAILABLE" -ne "0" ]' >> autorun.sh
     echo 'then' >> autorun.sh
     echo '    echo "Installing pm2..."' >> autorun.sh
-    echo '    npm install -g pm2' >> autorun.sh
+    echo '    sudo npm install -g pm2' >> autorun.sh
     echo 'fi' >> autorun.sh
     echo '' >> autorun.sh
     echo 'pm2 delete all' >> autorun.sh
