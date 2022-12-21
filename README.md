@@ -56,7 +56,7 @@ sh ./autorun.sh
 
 ## 🎮 Usage
 
-> 📓Please take a look on this section after done [#💾 Installation](#%F0%9F%92%BE%20Installation) section first.
+> 📓Please take a look on this section after done [#💾 Installation](#-installation) section first.
 > 
 > After you have installed services by `cargowork_cloner.sh`, you can use `autorun.sh` even you lose track of your current directory (`cd`) because the installer always install the project on your home directory (~/).
 
