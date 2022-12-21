@@ -1,5 +1,4 @@
-# cargowork_installer
-Shell scripts for CargoWork services
+#knowledge-discovery #installer
 
 This script is used for clone 3 cargowork services including 
 
@@ -13,12 +12,14 @@ and also gives `autorun.sh` which use `pm2` to easily manage all those services
 
 ## Table of Contents
 
-- [📚 Prerequisite tools](#-prerequisite-tools)
-- [💾 Installation](#-installation)
+- [#📚 Prerequisite tools](#-prerequisite-tools)
+- [#💾 Installation](#-installation)
+- [#🎮 Usage](#-usage)
 
 ---
 
 ## 📚 Prerequisite tools
+
 - Brew
 - Git
 - NPM (Node v16.x.x only)
@@ -35,6 +36,7 @@ and also gives `autorun.sh` which use `pm2` to easily manage all those services
 Open terminal and clone the repository
 
 ```sh
+cd ~/ && \
 git clone https://github.com/phurinutwara/cargowork_installer/ cargowork && \
 cd cargowork
 ```
@@ -50,17 +52,62 @@ and it will prompt you to enter bitbucket username and password, enter it.
 (You can get from our discord channel at topic [#global-announcement](https://discord.com/channels/843782884581441536/844771471356461078/1054230944745263104))
 
 
-![Pasted image 20221219093839.png](https://raw.githubusercontent.com/phurinutwara/cargowork_installer/main/.attachments/Pasted%20image%2020221219093839.png)
+![Pasted image 20221219093839](attachments/Pasted%20image%2020221219093839.png?raw=true)
 
 Wait until the cloner done its 3 clones, you will get `cargowork` folder.
 Then use `autorun.sh` to automatically run 3 core-services with ease by using `sh [file]` command
 
 ```sh
-chmod +x ./autorun.sh
+chmod +x ./autorun.sh && \
 sh ./autorun.sh
 ```
 
-\*\* If you accidentally press CTRL+C to quite to pm2 monitor dashboard, you can view it again by
+## 🎮 Usage
+
+> 📓Please take a look on this section after done [#💾 Installation](#%F0%9F%92%BE%20Installation) section first.
+> 
+> After you have installed services by `cargowork_cloner.sh`, you can use `autorun.sh` even you lose track of your current directory (`cd`) because the installer always install the project on your home directory (~/).
+
+Try this command when you want to run services
+
+```sh
+cd ~/cargowork && ./autorun.sh
+```
+
+To list the services use this
+
+```sh
+pm2 ls
+```
+
+To stop services use this
+
+```sh
+pm2 stop all
+```
+
+To delete services from list use this
+
+```sh
+pm2 delete all
+```
+
+To show log and stream output on certain service use this
+
+```sh
+# Usage: logs [options] [id|name|namespace]
+
+# if you want to log frontend service, try this
+pm2 log wms-aotga
+
+# if you want to log backend service, try this
+pm2 log wms-service
+
+# if you want to log graph service, try this
+pm2 log know_graph_service
+```
+
+If you accidentally press CTRL+C to quite to pm2 monitor dashboard, you can view it again by
 
 ```sh
 pm2 monit
