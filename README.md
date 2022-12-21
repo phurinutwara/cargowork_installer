@@ -57,7 +57,7 @@ Then use `autorun.sh` to automatically run 3 core-services with ease by using `s
 
 ```sh
 chmod +x ./autorun.sh && \
-sh ./autorun.sh
+ln -s ~/cargowork/autorun.sh ~/cargowork_autorun
 ```
 
 ---
@@ -71,7 +71,7 @@ sh ./autorun.sh
 Try this command when you want to run services
 
 ```sh
-cd ~/cargowork && ./autorun.sh
+~/cargowork_autorun
 ```
 
 To list the services use this
