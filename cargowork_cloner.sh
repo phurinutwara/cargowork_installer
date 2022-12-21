@@ -18,25 +18,11 @@ then
 fi
 
 ENV_DECRYPT () {
-    mkdir "../env" > /dev/null 2>&1
+    echo "Decrypting enc files"
+    mkdir "env" > /dev/null 2>&1
     openssl enc -aes-256-cbc -d -in enc/wms-service.enc -out env/wms-service.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
     openssl enc -aes-256-cbc -d -in enc/wms-aotga.enc -out env/wms-aotga.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
     openssl enc -aes-256-cbc -d -in enc/know_graph_service.enc -out env/know_graph_service.env -pass file:wms-service/keys/development_rsa_4096_priv.pem
-}
-
-# Write Backend ENV
-BACK_ENV () {
-    cp ../env/wms-service.env ./.env
-}
-
-# Write Graph ENV
-GRAPH_ENV () {
-    cp ../env/know_graph_service.env ./.env
-}
-
-# Write Frontend ENV
-FRONT_ENV () {
-    cp ../env/wms-aotga.env ./.env
 }
 
 ECHO_AUTORUN() {
@@ -95,9 +81,6 @@ MAIN () {
         npm install --global yarn
     fi
 
-    # mkdir "cargowork" > /dev/null 2>&1
-    # cd "cargowork/"
-
     # Clone Backend Service
     echo "";
     echo "[Step 1] Start Cloning Backend Service"
@@ -107,7 +90,7 @@ MAIN () {
     then
         ENV_DECRYPT
         cd "wms-service/"
-        BACK_ENV
+        cp ../env/wms-service.env ./.env
         yarn install
         cd "../"
     fi
@@ -120,7 +103,7 @@ MAIN () {
     if [ "$IS_CLONE_GRAPH_SUCCESS" -eq "0" ] 
     then
         cd "know_graph_service/"
-        GRAPH_ENV
+        cp ../env/know_graph_service.env ./.env
         yarn install
         cd "../"
     fi
@@ -133,7 +116,7 @@ MAIN () {
     if [ "$IS_CLONE_FRONTEND_SUCCESS" -eq "0" ] 
     then
         cd "wms-aotga/"
-        FRONT_ENV
+        cp ../env/wms-aotga.env ./.env
         git checkout dev-lated
         yarn install
         cd "../"
