@@ -1,5 +1,3 @@
-#knowledge-discovery #installer
-
 This script is used for clone 3 cargowork services including 
 
 - `wms-service` 
@@ -8,15 +6,11 @@ This script is used for clone 3 cargowork services including
 
 and also gives `autorun.sh` which use `pm2` to easily manage all those services
 
----
-
 ## Table of Contents
 
 - [#📚 Prerequisite tools](#-prerequisite-tools)
 - [#💾 Installation](#-installation)
 - [#🎮 Usage](#-usage)
-
----
 
 ## 📚 Prerequisite tools
 
@@ -26,8 +20,6 @@ and also gives `autorun.sh` which use `pm2` to easily manage all those services
 - Yarn
 - PM2
 - openssl (v3+)
-
----
 
 ## 💾 Installation
 
@@ -52,7 +44,7 @@ and it will prompt you to enter bitbucket username and password, enter it.
 (You can get from our discord channel at topic [#global-announcement](https://discord.com/channels/843782884581441536/844771471356461078/1054230944745263104))
 
 
-![Pasted image 20221219093839](attachments/Pasted%20image%2020221219093839.png?raw=true)
+![Pasted image 20221219093839](attachments/Pasted%20image%2020221219093839.png)
 
 Wait until the cloner done its 3 clones, you will get `cargowork` folder.
 Then use `autorun.sh` to automatically run 3 core-services with ease by using `sh [file]` command
