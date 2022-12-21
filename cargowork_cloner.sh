@@ -152,6 +152,7 @@ MAIN () {
 
     [ "$BE_IS_INSTALLED" -eq "0" ] && [ "$GRAPH_IS_INSTALLED" -eq "0" ] && [ "$FE_IS_INSTALLED" -eq "0" ] && \
     rm cargowork_cloner.sh && \
-    rm -rf en*
+    rm -rf enc && \
+    rm -rf env
 }
 MAIN
