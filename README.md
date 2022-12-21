@@ -14,6 +14,8 @@ and also gives `autorun.sh` which use `pm2` to easily manage all those services
 - [#💾 Installation](#-installation)
 - [#🎮 Usage](#-usage)
 
+---
+
 ## 📚 Prerequisite tools
 
 - Brew
