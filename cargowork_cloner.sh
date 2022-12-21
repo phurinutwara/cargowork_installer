@@ -26,7 +26,7 @@ ENV_DECRYPT () {
 }
 
 ECHO_AUTORUN() {
-    echo '#! /bin/sh' >> autorun.sh
+    echo '#! /bin/sh' > autorun.sh
     echo '' >> autorun.sh
     echo '# Pre-check tools ( git, npm )' >> autorun.sh
     echo '' >> autorun.sh
@@ -39,6 +39,7 @@ ECHO_AUTORUN() {
     echo 'fi' >> autorun.sh
     echo '' >> autorun.sh
     echo 'pm2 delete all' >> autorun.sh
+    echo 'cd ~/cargowork' >> autorun.sh
     echo '' >> autorun.sh
     echo 'echo ""' >> autorun.sh
     echo 'echo "[Step 1/3] Running backend service"' >> autorun.sh
