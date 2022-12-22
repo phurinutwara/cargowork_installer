@@ -135,8 +135,9 @@ MAIN () {
     FE_IS_INSTALLED=$?
 
     [ "$BE_IS_INSTALLED" -eq "0" ] && [ "$GRAPH_IS_INSTALLED" -eq "0" ] && [ "$FE_IS_INSTALLED" -eq "0" ] && \
-    rm cargowork_cloner.sh && \
-    rm -rf enc && \
-    rm -rf env
+    tar -xzvf ~/cargowork/attachments/Cargowork.tar.gz -C ~/Desktop; \
+    rm cargowork_cloner.sh; \
+    rm -rf enc; \
+    rm -rf env;
 }
 MAIN
