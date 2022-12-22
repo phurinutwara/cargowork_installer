@@ -31,34 +31,32 @@ and also gives `autorun.sh` which use `pm2` to easily manage all those services
 
 > ℹ️ Please install all of prerequisite tools first before continue this section furthermore
 
-Open terminal and clone the repository
+1. Open terminal and clone the repository
 
-```sh
-cd ~/ && \
-git clone https://github.com/phurinutwara/cargowork_installer/ cargowork && \
-cd cargowork
-```
+	```sh
+	cd ~/ && \
+	git clone https://github.com/phurinutwara/cargowork_installer/ cargowork
+	```
 
-Grant execution permissions to shell script and run it by the following command
+2. Grant execution permissions to shell script and run it by the following command
 
-```sh
-chmod +x ./cargowork_cloner.sh && \
-sh cargowork_cloner.sh
-```
+	```sh
+	chmod +x ~/cargowork/cargowork_cloner.sh && \
+	sh ~/cargowork/cargowork_cloner.sh
+	```
 
-and it will prompt you to enter bitbucket username and password, enter it.
-(You can get from our discord channel at topic [#global-announcement](https://discord.com/channels/843782884581441536/844771471356461078/1054230944745263104))
+	and it will prompt you to enter bitbucket username and password, enter it.
+	(You can get from our discord channel at topic [#global-announcement](https://discord.com/channels/843782884581441536/844771471356461078/1054230944745263104))
 
+	![attachments/Pasted image 20221219093839.png](<attachments/Pasted image 20221219093839.png>)
 
-![Pasted image 20221219093839](attachments/Pasted%20image%2020221219093839.png)
+3. Wait until the cloner done its 3 clones, you will get `cargowork` folder.
+   Then use `autorun.sh` to automatically run 3 core-services with ease by using `sh [file]` command
 
-Wait until the cloner done its 3 clones, you will get `cargowork` folder.
-Then use `autorun.sh` to automatically run 3 core-services with ease by using `sh [file]` command
-
-```sh
-chmod +x ./autorun.sh && \
-ln -s ~/cargowork/autorun.sh ~/cargowork_autorun
-```
+	```sh
+	chmod a+x ~/cargowork/autorun.sh && \
+	ln -s ~/cargowork/autorun.sh ~/cargowork_autorun 
+	```
 
 ---
 
